@@ -6,7 +6,6 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    # @property.nearest_stations.build
   end
 
   def new
@@ -16,12 +15,10 @@ class PropertiesController < ApplicationController
 
   def edit
     @property.nearest_stations.new
-    # @property.nearest_stations.build
   end
 
   def create
     @property = Property.new(property_params)
-    # @nearest_station = @nearest_stations.create(nearest_station_params)
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: "Property was successfully created." }

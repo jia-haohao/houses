@@ -1,41 +1,6 @@
 <p id="notice"><%= notice %></p>
-<%= form_with(model: @property, local: true) do |form| %>
-  <p>
-    <strong>Property Detail</strong>
-    <%= @property.property %>
-  </p>
-  <p>
-    <strong>Rent:</strong>
-    <%= @property.rent %>
-  </p>
-  <p>
-    <strong>Address:</strong>
-    <%= @property.address %>
-  </p>
-  <p>
-    <strong>Building age:</strong>
-    <%= @property.building_age %>
-  </p>
-  <p>
-    <strong>Remarks:</strong>
-    <%= @property.remarks %>
-  </p>
-  <%= form.fields_for :nearest_stations do | nearest_station | %>
-    <h2>Nearest station <%= nearest_station.index + 1 %></h2>
-    <div class="field">
-      <%= nearest_station.label :railway, "Name of railway:" %>
-      <%= nearest_station.text_field :railway %>
-    </div>
-    <div class="field">
-      <%= nearest_station.label :station_name, "Station name:" %>
-      <%= nearest_station.text_field :station_name %>
-    </div>
-    <div class="field">
-      <%= nearest_station.label :walk_minutes, "How many minutes walk:" %>
-      <%= nearest_station.text_field :walk_minutes %>
-    </div>
-    
-  <% end %>
-<% end %>
+
+<%= render 'form', property: @property %>
+  
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>

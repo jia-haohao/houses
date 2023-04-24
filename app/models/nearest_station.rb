@@ -1,5 +1,4 @@
 class NearestStation < ApplicationRecord
+  validates :railway, :station_name, :walk_minutes, presence: true
   belongs_to :property
-  # has_one :property
-  # accepts_nested_attributes_for :properties
 end
